@@ -1,0 +1,21 @@
+{
+  "name": "webbangumiapi",
+  "version": "1.0.0",
+  "description": "A API Wrapper for Bangumi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "author": "zsx <zsx@zsxsoft.com>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.20.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-typescript": "^2.13.5",
+    "node-fetch": "^1.5.3"
+  }
+}

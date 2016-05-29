@@ -1,0 +1,22 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": false
+  },
+  "exclude": [
+    "gulpfile.js"
+  ],
+  "extends": "defaults",  
+  "rules": {
+    "comma-dangle": ["error", "only-multiline"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module", 
+    "ecmaFeatures": {
+      "jsx": true,
+      "impliedStrict": true
+    }
+  }
+}
