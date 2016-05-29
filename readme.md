@@ -17,8 +17,9 @@ WebBangumiAPI
 ## 开发
 ### 配置环境
 ```bash
-npm install gulp -g
+npm install gulp typings -g
 npm install
+typings install
 ```
 ### 实时编译 & 调试
 ```bash
