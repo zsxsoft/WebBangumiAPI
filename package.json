@@ -1,8 +1,8 @@
 {
   "name": "webbangumiapi",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A API Wrapper for Bangumi",
-  "main": "index.js",
+  "main": "built/src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build",
@@ -17,5 +17,17 @@
     "gulp": "^3.9.1",
     "gulp-typescript": "^2.13.5",
     "node-fetch": "^1.5.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zsxsoft/WebBangumiAPI.git"
+  },
+  "keywords": [
+    "API",
+    "Bangumi"
+  ],
+  "bugs": {
+    "url": "https://github.com/zsxsoft/WebBangumiAPI/issues"
+  },
+  "homepage": "https://github.com/zsxsoft/WebBangumiAPI#readme"
 }

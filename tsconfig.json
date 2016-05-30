@@ -1,14 +1,13 @@
 {
     "compilerOptions": {
         "target": "es6",
-        "allowJs": true, 
+        "allowJs": false, 
         "module": "commonjs",
         "sourceMap": true, 
         "noImplicitAny": true,
         "experimentalDecorators": true,
         "preserveConstEnums": true, 
-        "outDir": "built", 
-        "rootDir": "src"
+        "declaration": true
     }, 
     "exclude": [
         "node_modules"

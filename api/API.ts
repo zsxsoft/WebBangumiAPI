@@ -1,5 +1,5 @@
 export namespace API {
-    export const Index = "http://bgm.tv";
+    export let Index = "http://bgm.tv";
     export const Login = "/login";
     export const WatchingList = "/";
     export const Timeline = "/timeline";

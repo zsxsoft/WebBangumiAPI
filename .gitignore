@@ -1,7 +1,10 @@
 # Most part of this file is created by https://www.gitignore.io
 typings/
-built
+*.js
+*.d.ts
+*.map
 
+!gulpfile.js
 
 ### Node ###
 # Logs
