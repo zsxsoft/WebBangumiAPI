@@ -47,9 +47,9 @@ Login.request("Username", "Password").then(c => {
 
 ## API
 - [ ] 首页
-  - [x] 登录 [example/login.js](``API/Login``)
-  - [x] 正在观看列表 [example/watching.js](``API/WatchingList``)
-  - [x] 时间线（返回HTML） [example/timeline.js](``API/Timeline``)
+  - [x] 登录 [``API/Login``](example/login.js)
+  - [x] 正在观看列表 [``API/WatchingList``](example/watching.js)
+  - [x] 时间线（返回HTML） [``API/Timeline``](example/timeline.js)
 - [ ] 动画
   - [ ] 动画列表
      - [ ] 排行榜
@@ -64,8 +64,8 @@ Login.request("Username", "Password").then(c => {
   - [ ] 动画吐槽
   - [ ] 动画讨论
   - [x] 单集
-     - [x] 设置单集进度 [example/watching.js](``API/Anime/Watched``)
-     - [x] 单集评论 [example/epdiscussion.js](``API/Anime/EpDiscussion``)
+     - [x] 设置单集进度 [``API/Anime/Watched``](example/watching.js)
+     - [x] 单集评论 [``API/Anime/EpDiscussion``](example/epdiscussion.js)
   - [ ] 设置整部动画观看进度
 - [ ] 个人信息
      - [ ] TO BE CONTINUED...
