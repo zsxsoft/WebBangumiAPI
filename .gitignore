@@ -5,6 +5,7 @@ typings/
 *.map
 
 !gulpfile.js
+!type_definitions/*.d.ts
 
 ### Node ###
 # Logs
