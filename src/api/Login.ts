@@ -41,7 +41,8 @@ export default class Login {
         };
         return new Promise<string>((resolve, reject) => {
             this.GetFormHash().then(formhash => {
-                console.log(`Got formhash = ${formhash}`);
+                // console.log(`Got formhash = ${formhash}`);
+                // LOG HERE
                 paramter.formhash = formhash;
                 return post(`${API.Index}${API.Login}`, paramter);
             }).then(ret => {

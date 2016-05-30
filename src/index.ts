@@ -3,10 +3,13 @@ import Login from './api/Login';
 import WatchingList from './api/WatchingList';
 import Timeline from './api/timeline';
 import Watched from './api/Anime/Watched';
+import EpDiscussion from './api/Anime/EpDiscussion';
 import {getCookies} from './request';
 
 Login.request("YOUR_USER_NAME", "YOUR_PASSWORD").then(ret => {
     console.log("Login successfully");
+    
+    if (1 === 1) return; // To avoid TypeScript's warning
     
     /**
      * 时间线示例
@@ -28,4 +31,15 @@ Login.request("YOUR_USER_NAME", "YOUR_PASSWORD").then(ret => {
         return Watched.request(epId, d.gh);
     }).then(d => console.log(d)).catch(e => console.log(e));
     
+    
+    /**
+     * 获取单集讨论示例
+     */
+    EpDiscussion.request("617760").then(e => {
+        console.log(e);
+    }).catch(e => {
+        console.log(e);
+    })
+    
+
 }).catch(ret => console.log(ret)); //"登录失败！"));

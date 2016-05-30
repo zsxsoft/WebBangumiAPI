@@ -14,8 +14,6 @@ export default class Watched {
     static request(ep: string[], gh: string) {
         let newestEp = ep[ep.length - 1];
         let combinedUrl = `${API.Index}${API.Anime.Watched}?gh=${gh}&ajax=1`.replace("$id", newestEp);
-        console.log(combinedUrl);
-        console.log(ep);
         return new Promise<boolean>((resolve, reject) => {
             post(combinedUrl, {
                 ep_id: ep.join(",")

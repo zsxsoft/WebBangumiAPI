@@ -25,9 +25,9 @@ WebBangumiAPI
      - [ ] 制作人员
   - [ ] 动画吐槽
   - [ ] 动画讨论
-  - [ ] 单集
+  - [x] 单集
      - [x] 设置单集进度 ``api/Anime/Watched``
-     - [ ] 单集评论
+     - [x] 单集评论 ``api/Anime/EpDiscussion``
   - [ ] 设置整部动画观看进度
 - [ ] 个人信息
      - [ ] TO BE CONTINUED...
@@ -41,6 +41,7 @@ WebBangumiAPI
   - [ ] 随便看看
   - [ ] 小组列表
   - [ ] 话题 / 回复
+      - [ ] 查看
       - [ ] 新建
       - [ ] 编辑
       - [ ] 删除
