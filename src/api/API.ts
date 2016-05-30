@@ -3,7 +3,10 @@ export namespace API {
     export const Login = "/login";
     export const WatchingList = "/";
     export const Timeline = "/timeline";
-    export const Watched = "/subject/ep/$id/status/watched";
+    export const Anime = {
+        Comment: "/ep/$id", 
+        Watched: "/subject/ep/$id/status/watched", 
+    };
 }
 export namespace Timeline {
     export enum Type {

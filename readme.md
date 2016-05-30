@@ -26,7 +26,7 @@ WebBangumiAPI
   - [ ] 动画吐槽
   - [ ] 动画讨论
   - [ ] 单集
-     - [x] 设置单集进度 ``api/Watched``
+     - [x] 设置单集进度 ``api/Anime/Watched``
      - [ ] 单集评论
   - [ ] 设置整部动画观看进度
 - [ ] 个人信息
