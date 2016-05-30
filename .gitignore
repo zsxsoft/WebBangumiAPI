@@ -6,6 +6,7 @@ typings/
 
 !gulpfile.js
 !type_definitions/*.d.ts
+!example/*.js
 
 ### Node ###
 # Logs

@@ -7,11 +7,49 @@ WebBangumiAPI
 
 目前版本尚未开放外部调用，只能在程序的index.ts里编写测试代码。
 
+## 安装
+``npm install webbangumiapi --save`` （尚未Publish）
+
+## 使用
+### 在Node中
+```javascript
+/* 
+  Node没有fetch，所以需要为其引入一个Polyfill. 
+  此处代码建议在工程入口执行，只需要执行一次。
+*/
+require('webbangumiapi').fetch = require('node-fetch');
+
+/*
+  登录
+  项目按照ES6 Import规范编写，故Node调用需要.default。
+ */
+var Login = require('webbangumiapi/API/Login').default;
+Login.request("Username", "Password").then(c => {
+  console.log("登录成功");
+}).catch(d => {
+  console.log("登录失败");
+})
+```
+
+### 在浏览器 / React Native中
+```javascript
+/*
+  此处默认你已经使用Webpack / browserify / React Packager等工具打包
+ */
+import Login from 'webbangumiapi/API/Login';
+Login.request("Username", "Password").then(c => {
+  console.log("登录成功");
+}).catch(d => {
+  console.log("登录失败");
+})
+```
+
+
 ## API
 - [ ] 首页
-  - [x] 登录 ``api/Login``
-  - [x] 正在观看列表 ``api/WatchingList``
-  - [x] 时间线（返回HTML） ``api/Timeline``
+  - [x] 登录 [example/login.js](``API/Login``)
+  - [x] 正在观看列表 [example/watching.js](``API/WatchingList``)
+  - [x] 时间线（返回HTML） [example/timeline.js](``API/Timeline``)
 - [ ] 动画
   - [ ] 动画列表
      - [ ] 排行榜
@@ -26,8 +64,8 @@ WebBangumiAPI
   - [ ] 动画吐槽
   - [ ] 动画讨论
   - [x] 单集
-     - [x] 设置单集进度 ``api/Anime/Watched``
-     - [x] 单集评论 ``api/Anime/EpDiscussion``
+     - [x] 设置单集进度 [example/watching.js](``API/Anime/Watched``)
+     - [x] 单集评论 [example/epdiscussion.js](``API/Anime/EpDiscussion``)
   - [ ] 设置整部动画观看进度
 - [ ] 个人信息
      - [ ] TO BE CONTINUED...

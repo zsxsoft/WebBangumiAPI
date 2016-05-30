@@ -1,13 +1,13 @@
 import {API, Subject} from './../API';
 import * as cheerio from 'cheerio';
-type IFloorAuthor = {
+export type IFloorAuthor = {
     url: string;
     avatar: string;
     id: string;
     name: string; 
     signature: string;
 }
-type IFloor = {
+export type IFloor = {
     id: string;
     floor: string;
     time: number;

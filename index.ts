@@ -1,6 +1,10 @@
 import * as API from './api/API';
-if (!global) var global = {}; // To let TypeScript Compiler know it's a variable.
-if (!module) var module = {};
+// I don't want to import node.d.ts, so I write this.
+// this will not be compiled.
+declare var global: Object;
+declare var module: Object;
+
+
 (<any>module).exports = {
     set API(apiServer: string) {
         API.API.Index = apiServer;

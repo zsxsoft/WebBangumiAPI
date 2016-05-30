@@ -7,7 +7,9 @@
         "noImplicitAny": true,
         "experimentalDecorators": true,
         "preserveConstEnums": true, 
-        "declaration": true
+        "declaration": true, 
+        "outDir": ".", 
+        "rootDir": "."
     }, 
     "exclude": [
         "node_modules"

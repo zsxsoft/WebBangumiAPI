@@ -1,8 +1,8 @@
 import {API, Subject} from './API';
 import request, {post} from '../request';
 import * as cheerio from 'cheerio';
-type IWatchingSubject = Subject.IWatchingSubject;
-type IReturnType = {
+export type IWatchingSubject = Subject.IWatchingSubject;
+export type IWatchingList = {
     gh: string;
     watching: IWatchingSubject[]
 };
@@ -17,7 +17,7 @@ export default class WatchingList {
      */
     static request() {
 
-        return new Promise<IReturnType>((resolve, reject) => {
+        return new Promise<IWatchingList>((resolve, reject) => {
             request(API.Index).then(ret => {
                 return ret.text();
             }).then(html => {
@@ -36,7 +36,7 @@ export default class WatchingList {
     /**
      * Get Object from HTML
      */
-    static analyzeHtml(html: string): IReturnType {
+    static analyzeHtml(html: string): IWatchingList {
         let $ = cheerio.load(html);
         let $li = $("li[subject_type]");
         let ret: IWatchingSubject[] = [];

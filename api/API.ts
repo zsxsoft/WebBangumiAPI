@@ -6,7 +6,7 @@ export namespace API {
     export const Anime = {
         Comment: "/ep/$id", 
         Watched: "/subject/ep/$id/status/watched", 
-    };
+    };  
 }
 export namespace Timeline {
     export enum Type {
