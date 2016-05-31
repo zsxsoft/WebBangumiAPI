@@ -50,31 +50,38 @@ Login.request("Username", "Password").then(c => {
   - [x] 登录 [``API/Login``](example/login.js)
   - [x] 正在观看列表 [``API/WatchingList``](example/watching.js)
   - [x] 时间线（返回HTML） [``API/Timeline``](example/timeline.js)
+- [ ] 单项信息
+  - [ ] 单项页面信息
+  - [ ] 角色信息
+  - [ ] 制作人员
+  - [ ] 常去小组
+  - [ ] 正在观看
+  - [ ] 推荐目录
+  - [ ] 吐槽
+  - [ ] 讨论
+  - [ ] 
+- [ ] 列表
+  - [ ] 排行榜
+  - [ ] 每日放送
+  - [ ] 标签
+  - [ ] 分类浏览
+  - [ ] 日志
 - [ ] 动画
-  - [ ] 动画列表
-     - [ ] 排行榜
-     - [ ] 每日放送
-     - [ ] 动画标签
-     - [ ] 分类浏览
-     - [ ] 动画日志
-  - [ ] 动画信息
-     - [ ] 首页信息
-     - [ ] 角色信息
-     - [ ] 制作人员
-  - [ ] 动画吐槽
-  - [ ] 动画讨论
-  - [x] 单集
-     - [x] 设置单集进度 [``API/Anime/Watched``](example/watching.js)
-     - [x] 单集评论 [``API/Anime/EpDiscussion``](example/epdiscussion.js)
+  - [ ] 章节
+     - [x] 设置章节进度 [``API/Anime/Watched``](example/watching.js)
+     - [x] 章节评论 [``API/Anime/EpDiscussion``](example/epdiscussion.js)
+     - [ ] 章节信息
   - [ ] 设置整部动画观看进度
-- [ ] 个人信息
-     - [ ] TO BE CONTINUED...
+- [ ] 人物信息
+     - [ ] 出演列表
+     - [ ] 作品列表
+     - [ ] 收藏
 - [ ] 书籍
-     - [ ] TO BE CONTINUED...
+     - [ ] 单行本
+     - [ ] 设置整本书阅读进度
 - [ ] 音乐
-     - [ ] TO BE CONTINUED...
+     - [ ] 曲目
 - [ ] 游戏
-     - [ ] TO BE CONTINUED...
 - [ ] 小组
   - [ ] 随便看看
   - [ ] 小组列表
@@ -88,6 +95,8 @@ Login.request("Username", "Password").then(c => {
       - [ ] 创建小组
       - [ ] 退出小组
       - [ ] 设置小组
+- [ ] 个人信息
+     - [ ] TO BE CONTINUED...
 - [ ] 搜索
 - [ ] TO BE CONTINUED...
       

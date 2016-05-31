@@ -6,6 +6,7 @@ export namespace API {
     export const Anime = {
         Comment: "/ep/$id", 
         Watched: "/subject/ep/$id/status/watched", 
+        Information: "/subject/$id"
     };  
 }
 export namespace Timeline {
@@ -33,11 +34,58 @@ export namespace Subject {
         Real = 6,
     }
     export enum EpStatus {
-        Watched, 
+        /**
+         * 已经观看
+         */
+        Watched,
+        /**
+         * 可以观看（但未观看）
+         */ 
         Air, 
+        /**
+         * 状态未知
+         */
         NA, 
-        Drop, 
+        /**
+         * 抛弃
+         */
+        Drop,
+        /**
+         * 想看
+         */ 
         Queue, 
+    }
+    export enum FavoriteStatus {
+        /**
+         * 没有记录
+         */
+        NA, 
+        /**
+         * 想看
+         */
+        Wish,
+        /**
+         * 看过
+         */ 
+        Collect, 
+        /**
+         * 在看
+         */
+        Do, 
+        /**
+         * 搁置
+         */
+        On_hold, 
+        /**
+         * 抛弃
+         */
+        Dropped
+    }
+    export type IFavoriteStatus = {
+        status: FavoriteStatus;
+        score: number;
+        tag: string[];
+        tucao: string;
     }
     export type IWatchingSubject = {
         type: Type;
