@@ -30,9 +30,9 @@ export default class Parser {
             let $row = $(row);
             let $author = $row.find(".inner>strong").eq(0);
             rowRet.author = <IFloorAuthor>{};
-            rowRet.floor = $row.find(".floor-anchor").text().replace("#", "");
+            rowRet.floor = $row.find(".floor-anchor").eq(0).text().replace("#", "");
             rowRet.content = $row.find(isSub ? ".cmt_sub_content" : ".message").html().toString().trim();
-            rowRet.time = new Date($row.find(".re_info").text().trim().replace(/^\#\d+(-\d+)? - /, "")).getTime();
+            rowRet.time = new Date($row.find(".re_info").eq(0).text().trim().replace(/^\#\d+(-\d+)? - /, "")).getTime();
             rowRet.id = $row.attr("id").replace(/topic_reply_|post_/, "");
             rowRet.author.avatar = $row.find(".avatarNeue").css("background-image").replace(/url\(["'](.*?)["']\)/, "$1");
             rowRet.author.name = $author.text();
