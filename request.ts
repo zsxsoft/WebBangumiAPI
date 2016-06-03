@@ -1,4 +1,4 @@
-
+import {fetch} from './utils';
 let defaultHeader = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2739.0 Safari/537.36', 
     'Cookie': '',
@@ -29,7 +29,7 @@ export default function request(url: string | Request, init: RequestInit = {}): 
     if (!init.headers) init.headers = {};
     let mergedHeader = Object.assign(init.headers, defaultHeader);
     mergedHeader.Cookie = cookieToString(cookies);
-    return fetch(url, Object.assign(init, mergedHeader)).then(value => {
+    return fetch(url, Object.assign(init, mergedHeader)).then((value: Response) => {
         parseCookie(value.headers.getAll("Set-Cookie"));
         return value;
     });

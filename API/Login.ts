@@ -1,6 +1,6 @@
 import {API} from './API';
 import request, {post} from '../request';
-import * as cheerio from 'cheerio';
+import {loadCheerio} from '../utils';
 
 type LoginField = {
     formhash: string;
@@ -21,7 +21,7 @@ export default class Login {
             request(API.Index).then(ret => {
                 return ret.text();
             }).then(htmlString => {
-                let $ = cheerio.load(htmlString);
+                let $ = loadCheerio(htmlString);
                 return $("[name='formhash']").val();
             }).then(val => resolve(val))
                 .catch(reason => reject(reason));

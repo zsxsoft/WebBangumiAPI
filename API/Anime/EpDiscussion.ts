@@ -1,6 +1,6 @@
 import {API, Subject} from './../API';
 import request, {post} from '../../request';
-import * as cheerio from 'cheerio';
+import {loadCheerio} from '../../utils';
 import Parser from '../Discussion/Parser';
 /**
  * Return ep discussion

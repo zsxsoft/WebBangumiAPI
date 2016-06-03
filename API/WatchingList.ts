@@ -1,6 +1,6 @@
 import {API, Subject} from './API';
 import request, {post} from '../request';
-import * as cheerio from 'cheerio';
+import {loadCheerio} from '../utils';
 export type IWatchingSubject = Subject.IWatchingSubject;
 export type IWatchingList = {
     gh: string;
@@ -37,7 +37,7 @@ export default class WatchingList {
      * Get Object from HTML
      */
     static analyzeHtml(html: string): IWatchingList {
-        let $ = cheerio.load(html);
+        let $ = loadCheerio(html);
         let $li = $("li[subject_type]");
         let ret: IWatchingSubject[] = [];
         $li.each((index, element) => {

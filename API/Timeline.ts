@@ -1,6 +1,6 @@
 import {API, Timeline as TimelineNamespace} from './API';
 import * as request from '../request';
-import * as cheerio from 'cheerio';
+import {loadCheerio} from '../utils';
 
 type TimelineField = {
     ajax: string;

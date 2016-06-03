@@ -1,5 +1,5 @@
 import {API, Subject} from './../API';
-import * as cheerio from 'cheerio';
+import {loadCheerio} from '../../utils';
 export type ITucao = {
     name: string;
     userId: string;

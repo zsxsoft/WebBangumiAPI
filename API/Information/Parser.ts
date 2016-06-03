@@ -1,6 +1,7 @@
 import {API, Subject} from './../API';
-import * as Tucao from '../Tucao/Parser';
-import * as cheerio from 'cheerio';
+import Tucao, {ITucao} from '../Tucao/Parser';
+import {loadCheerio} from '../../utils';
+
 export type ICharacter = {
     name: {
         original: string;
@@ -102,6 +103,9 @@ export type IInformation = {
             id: string;
         }
     }[]; 
+    /**
+     * 推荐本条目的群组
+     */
     groups: {
         avatar: string;
         name: string;
@@ -111,7 +115,7 @@ export type IInformation = {
     /**
      * 吐槽箱
      */
-    tucao: Tucao.ITucao[];
+    tucao: ITucao[];
     /**
      * 谁看这部动画
      * 我不打算做左边XXXX看过的那部分了
@@ -134,7 +138,7 @@ export default class Parser {
 
     static parse(html: string): IInformation {
         let ret: IInformation = <IInformation>{};
-        ret.tucao = Tucao.default.parse(html);
+        ret.tucao = Tucao.parse(html);
         return ret;
        
     }

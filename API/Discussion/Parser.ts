@@ -1,5 +1,7 @@
 import {API, Subject} from './../API';
+import {loadCheerio} from '../../utils';
 import * as cheerio from 'cheerio';
+
 export type IFloorAuthor = {
     url: string;
     avatar: string;
@@ -47,9 +49,7 @@ export default class Parser {
      */
     static parseSingle(html: string) {
         
-        let $ = cheerio.load(html, {
-            decodeEntities: false
-        });
+        let $ = loadCheerio(html);
         let rowReply = $(".commentList").find(".row_reply");
         let ret = this.parseRow($, rowReply);
         return ret;
