@@ -18,6 +18,5 @@ export function getRealTime(timeString: string) {
         time = time.replace(/(.+)ago$/g, "$1").replace(/(\d+)([a-z])/g, "-$1 $2 ");
     }
     time = time.replace(/ d /g, " day ").replace(/ h /g, " hour ").replace(/ m /g, " minute ");
-    console.log(time);
     return strtotime(time) * 1000;
 }

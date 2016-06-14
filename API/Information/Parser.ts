@@ -27,6 +27,12 @@ export type IInformation = {
      */
     introduction: string;
     /**
+     * 动画信息
+     */
+    info: {
+        [key: string]: Subject.IInfoboxValue[]; 
+    }
+    /**
      * 单集播放状态
      */
     ep: Subject.IEpStatus[];
@@ -138,6 +144,32 @@ export default class Parser {
 
     static parse(html: string): IInformation {
         let ret: IInformation = <IInformation>{};
+        let $ = loadCheerio(html);
+        ret.info = {};
+        $("#infobox li").each((index, element) => {
+            let $e = $(element);
+            let fieldName = $e.find(".tip");
+            let nameString = fieldName.text();
+            let nextAll = fieldName.nextAll();
+            let template = {
+                value: "", 
+                chinese: "", 
+                id: ""
+            };
+            if (nextAll.length > 0) {
+                ret.info[nameString] = <Subject.IInfoboxValue[]>[];
+                nextAll.each((index, element) => {
+                    let $e = $(element);
+                    let object = Object.assign({}, template);
+                    object.value = $e.text();
+                    object.chinese = $e.attr("title") || object.value;
+                    object.id = $e.attr("href").replace("/person/", "") || "";
+                    ret.info[nameString].push(object);
+                });
+            } else {
+                ret.info[nameString] = [Object.assign(template, {value: $e.contents().eq(1).text()})];
+            }
+        });
         ret.tucao = Tucao.parse(html);
         return ret;
        

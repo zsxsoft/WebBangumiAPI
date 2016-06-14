@@ -82,12 +82,18 @@ export namespace Subject {
          */
         Dropped
     }
+    /**
+     * 我的收藏信息
+     */
     export type IFavoriteStatus = {
         status: FavoriteStatus;
         score: number;
         tag: string[];
         tucao: string;
     }
+    /**
+     * 播放信息
+     */
     export type IWatchingSubject = {
         type: Type;
         id: string;
@@ -98,12 +104,23 @@ export namespace Subject {
         maxPercent: string; // 0/??
         watchingPeople: number;
     }
+    /**
+     * 单集个人记录状态
+     */
     export type IEpStatus = {
         id: string;
         status: EpStatus;
         name: string;
         episode: string;
         subjectId: string;
+    }
+    /**
+     * 左侧信息盒属性
+     */
+    export type IInfoboxValue = {
+        value: string;
+        chinese: string;
+        id: string;
     }
     export function CastStringToEpStatus(str: string): EpStatus {
         for (let epMember in EpStatus) {
