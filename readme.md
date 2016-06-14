@@ -57,7 +57,7 @@ Login.request("Username", "Password").then(c => {
   - [ ] 常去小组
   - [ ] 正在观看
   - [ ] 推荐目录
-  - [ ] 吐槽
+  - [x] 吐槽 [``API/Anime/Tucao``](example/tucao.js)
   - [ ] 讨论
   - [ ] 
 - [ ] 列表

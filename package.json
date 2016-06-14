@@ -11,7 +11,8 @@
   "author": "zsx <zsx@zsxsoft.com>",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "^0.20.0"
+    "cheerio": "^0.20.0",
+    "locutus": "^2.0.4"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

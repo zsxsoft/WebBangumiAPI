@@ -1,5 +1,5 @@
 import {API, Subject} from './../API';
-import {loadCheerio} from '../../utils';
+import {loadCheerio, getAvatarFromBackground} from '../../utils';
 import * as cheerio from 'cheerio';
 
 export type IFloorAuthor = {
@@ -34,7 +34,7 @@ export default class Parser {
             rowRet.content = $row.find(isSub ? ".cmt_sub_content" : ".message").html().toString().trim();
             rowRet.time = new Date($row.find(".re_info").eq(0).text().trim().replace(/^\#\d+(-\d+)? - /, "")).getTime();
             rowRet.id = $row.attr("id").replace(/topic_reply_|post_/, "");
-            rowRet.author.avatar = $row.find(".avatarNeue").css("background-image").replace(/url\(["'](.*?)["']\)/, "$1");
+            rowRet.author.avatar = getAvatarFromBackground($row.find(".avatarNeue").css("background-image"));
             rowRet.author.name = $author.text();
             rowRet.author.url = $author.find("a").attr("href");
             rowRet.author.id = rowRet.author.url.replace("/user/", "");

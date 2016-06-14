@@ -6,7 +6,8 @@ export namespace API {
     export const Anime = {
         Comment: "/ep/$id", 
         Watched: "/subject/ep/$id/status/watched", 
-        Information: "/subject/$id"
+        Information: "/subject/$id", 
+        Tucao: "/subject/$id/comments?page=$page", 
     };  
 }
 export namespace Timeline {
