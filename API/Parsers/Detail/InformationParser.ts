@@ -25,8 +25,10 @@ export default class InformationParser extends Parser {
                 chinese: "", 
                 id: ""
             };
-            if (nextAll.length > 0) {
+            if (!ret[nameString]) {
                 ret[nameString] = <Subject.IInfoboxValue[]>[];
+            }
+            if (nextAll.length > 0) {
                 nextAll.each((index, element) => {
                     let $e = $(element);
                     let object = Object.assign({}, template);
@@ -36,8 +38,9 @@ export default class InformationParser extends Parser {
                     ret[nameString].push(object);
                 });
             } else {
-                ret[nameString] = [Object.assign(template, {value: $e.contents().eq(1).text()})];
+                ret[nameString].push(Object.assign(template, {value: $e.contents().eq(1).text()}));
             }
+
         });
         return ret;
     }
