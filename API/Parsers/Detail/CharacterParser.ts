@@ -7,7 +7,7 @@ import {loadCheerio} from '../../../utils';
 export type ICharacter = {
     name: {
         original: string;
-        Chinese: string;    
+        chinese: string;    
     }, 
     job: string;
     avatar: string;
@@ -22,6 +22,8 @@ export type ICharacter = {
 export default class CharacterParser extends Parser {
     
     static parse($: cheerio.Static) {
-        return {};
+        let ret: ICharacter[] = [];
+        
+        return ret;
     }
 }

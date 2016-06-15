@@ -45,21 +45,14 @@ export default class DiscussionParser extends Parser {
         });      
         return ret;
     }
+
     /**
      * Parse Discussion
      */
-    static parseSingle(html: string) {
-        
-        let $ = loadCheerio(html);
+    static parse($: cheerio.Static) {
         let rowReply = $(".commentList").find(".row_reply");
         let ret = this.parseRow($, rowReply);
         return ret;
     }
-    
-    static parseGroup(html: string) {
-        
-    }
-
-
 
 }

@@ -6,11 +6,8 @@ import {loadCheerio} from '../../utils';
  * @see http://bgm.tv/
  */
 export default class Parser {
-    new() {
-
-    }
+    
     public constructor() {
-        'fuck';
         // Do nothing
     }
 

@@ -1,6 +1,6 @@
 import * as Global from '../../../global';
-import Parser from '../Parser';
 import * as cheerio from 'cheerio';
+import Parser from '../Parser';
 import {API, Subject} from './../../API';
 import {loadCheerio} from '../../../utils';
 export type IInformation = {
