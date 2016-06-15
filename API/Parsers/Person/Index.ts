@@ -21,9 +21,9 @@ export type IPerson = {
 export default class Person extends Parser {
     static parse($: cheerio.Static) {
         let ret: IPerson = <IPerson>{};
+        // Other modules
         ret.comments = <IFloor[]>DiscussionParser.parse($);
         ret.information = InformationParser.parse($);
-        console.log(ret.information);
         return ret;
     }
 } 

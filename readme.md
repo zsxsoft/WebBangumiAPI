@@ -71,7 +71,7 @@ Login.request("Username", "Password").then(c => {
      - [x] 章节评论 [``API/Anime/EpDiscussion``](example/epdiscussion.js)
      - [ ] 章节信息
   - [ ] 设置整部动画观看进度
-- [ ] 人物信息
+- [ ] 人物信息 [``API/Person/``](example/person.js)（未完成）
      - [ ] 出演列表
      - [ ] 作品列表
      - [ ] 收藏
