@@ -1,4 +1,5 @@
 import {API} from './API';
+import * as Global from '../global';
 import request, {post} from '../request';
 import {loadCheerio} from '../utils';
 
@@ -51,7 +52,7 @@ export default class Login {
                 if (text.indexOf("欢迎您回来") > 0) {
                     resolve(text);
                 } else {
-                    let err: IRequestError = {
+                    let err: Global.IRequestError = {
                         html: text, 
                         message: "LOGIN_FAILED"
                     };

@@ -1,3 +1,4 @@
+import * as Global from '../global';
 import {API, Subject} from './API';
 import request, {post} from '../request';
 import {loadCheerio} from '../utils';
@@ -24,7 +25,7 @@ export default class WatchingList {
                 return this.analyzeHtml(html);
             }).then(ret => resolve(ret))
                 .catch(reason => {
-                    reject(<IRequestError>{
+                    reject(<Global.IRequestError>{
                         message: reason
                     });
                 });
