@@ -9,6 +9,7 @@ export namespace API {
         Information: "/subject/$id", 
         Tucao: "/subject/$id/comments?page=$page", 
     };  
+    export const Person = "/person/$id";
 }
  
 export namespace Timeline {

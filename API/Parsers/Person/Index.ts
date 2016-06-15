@@ -23,7 +23,7 @@ export default class Person extends Parser {
         let ret: IPerson = <IPerson>{};
         ret.comments = <IFloor[]>DiscussionParser.parse($);
         ret.information = InformationParser.parse($);
-        
+        console.log(ret.information);
         return ret;
     }
-}
+} 

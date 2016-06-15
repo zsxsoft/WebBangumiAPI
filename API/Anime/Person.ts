@@ -1,18 +1,18 @@
 import {API, Subject} from './../API';
 import APIRequest from '../APIRequest';
-import Parser from '../Parsers/Discussion';
+import Parser from '../Parsers/Person';
 /**
  * Return ep discussion
  * @see http://bgm.tv/
  */
-export default class EpDiscussion extends APIRequest {
+export default class Person extends APIRequest {
 
     /**
      * Get Person
      */
-    static request(ep: string) {
-        let url = `${API.Index}${API.Anime.Person}`.replace("$id", ep);
+    static request(id: string) {
+        let url = `${API.Index}${API.Person}`.replace("$id", id);
         return this.get(url, Parser);
     }
 
-}
+} 
