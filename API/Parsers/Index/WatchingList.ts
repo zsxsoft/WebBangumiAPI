@@ -1,7 +1,7 @@
-import * as Global from '../global';
-import {API, Subject} from './API';
-import request, {post} from '../request';
-import {loadCheerio} from '../utils';
+import * as Global from '../../../global';
+import * as cheerio from 'cheerio';
+import {API, Subject} from '../../API';
+import Parser from '../Parser';
 export type IWatchingSubject = Subject.IWatchingSubject;
 export type IWatchingList = {
     gh: string;
@@ -11,34 +11,12 @@ export type IWatchingList = {
  * Get watching list
  * @see http://bgm.tv/
  */
-export default class WatchingList {
-
-    /**
-     * Get Watching list
-     */
-    static request() {
-
-        return new Promise<IWatchingList>((resolve, reject) => {
-            request(API.Index).then(ret => {
-                return ret.text();
-            }).then(html => {
-                return this.analyzeHtml(html);
-            }).then(ret => resolve(ret))
-                .catch(reason => {
-                    reject(<Global.IRequestError>{
-                        message: reason
-                    });
-                });
-        });
-
-    } 
-
+export default class WatchingList extends Parser {
 
     /**
      * Get Object from HTML
      */
-    static analyzeHtml(html: string): IWatchingList {
-        let $ = loadCheerio(html);
+    static parse($: cheerio.Static): IWatchingList {
         let $li = $("li[subject_type]");
         let ret: IWatchingSubject[] = [];
         $li.each((index, element) => {

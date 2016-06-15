@@ -1,12 +1,12 @@
 'use strict';
 require('./node-global');
 var Login = require('./login');
-var WatchingList = require('../API/WatchingList').default;
+var WatchingList = require('../API/Index/WatchingList').default;
 var Watched = require('../API/Anime/Watched').default;
 var callback = null;
 
 Login.then(() => {
-	// 获取正在观看列表
+    // 获取正在观看列表
     return WatchingList.request();
 }).then(d => {
     console.log(d);
