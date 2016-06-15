@@ -1,5 +1,8 @@
-import {API, Subject} from './../API';
-import {loadCheerio, getAvatarFromBackground, getRealTime} from '../../utils';
+import {API, Subject} from '../../API';
+import {loadCheerio, getAvatarFromBackground, getRealTime} from '../../../utils';
+import * as cheerio from 'cheerio';
+import Parser from '../Parser';
+
 export type ITucao = {
     name: string;
     userId: string;
@@ -13,11 +16,10 @@ export type ITucao = {
  * @todo
  * @see http://bgm.tv/
  */
-export default class Tucao {
+export default class Tucao extends Parser {
 
-    static parse(html: string): ITucao[] {
+    static parse($: cheerio.Static): ITucao[] {
         let ret: ITucao[] = [];
-        let $ = loadCheerio(html);
         let commentBox = $("#comment_box");
         commentBox.find(".item").each((index, element) => {
             let rowRet: ITucao = <ITucao>{};

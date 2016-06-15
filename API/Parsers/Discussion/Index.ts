@@ -1,5 +1,6 @@
-import {API, Subject} from './../API';
-import {loadCheerio, getAvatarFromBackground} from '../../utils';
+import {API, Subject} from '../../API';
+import {loadCheerio, getAvatarFromBackground} from '../../../utils';
+import Parser from '../Parser';
 import * as cheerio from 'cheerio';
 
 export type IFloorAuthor = {
@@ -21,7 +22,7 @@ export type IFloor = {
  * Set ep status
  * @see http://bgm.tv/
  */
-export default class Parser {
+export default class DiscussionParser extends Parser {
 
     static parseRow($: cheerio.Static, rows: cheerio.Cheerio, isSub = false) {
         let ret: IFloor[] = [];

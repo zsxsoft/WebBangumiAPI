@@ -1,4 +1,5 @@
 import {API, Timeline as TimelineNamespace} from './API';
+import * as Global from '../global';
 import * as request from '../request';
 import {loadCheerio} from '../utils';
 
@@ -29,7 +30,7 @@ export default class Timeline {
                 resolve(html);
             })
                 .catch(reason => {
-                    reject(<IRequestError>{
+                    reject(<Global.IRequestError>{
                         message: reason
                     });
                 });

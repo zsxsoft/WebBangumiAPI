@@ -1,12 +1,13 @@
 import {fetch} from './utils';
+import * as Global from './global';
 let defaultHeader = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2739.0 Safari/537.36', 
     'Cookie': '',
 };
-let cookies: ISupportKey = {};
+let cookies: Global.ISupportKey = {};
 
 
-function cookieToString(cookieObject: ISupportKey): string {
+function cookieToString(cookieObject: Global.ISupportKey): string {
     let ret: string[] = [];
     Object.keys(cookieObject).forEach(value => {
         ret.push(`${value}=${cookieObject[value]}`);
@@ -37,19 +38,19 @@ export default function request(url: string | Request, init: RequestInit = {}): 
 /** 
  * Post Bangumi
  */
-export function post(url: string | Request, formData: ISupportKey, init: RequestInit = {}): Promise<Response> {
+export function post(url: string | Request, formData: Global.ISupportKey, init: RequestInit = {}): Promise<Response> {
     if (!init.headers) init.headers = <Headers>{};
     let body :string[] = [];
     Object.keys(formData).forEach(key => body.push(`${key}=${encodeURIComponent(formData[key])}`));
     init.body = body.join("&");
-    (<ISupportKey>init.headers)['Content-Type'] = 'application/x-www-form-urlencoded';
+    (<Global.ISupportKey>init.headers)['Content-Type'] = 'application/x-www-form-urlencoded';
     init.method = 'POST';
     return request(url, init);
 }
 /** 
  * Get Bangumi
  */
-export function get(url: string | Request, formData: ISupportKey, init: RequestInit = {}): Promise<Response> {
+export function get(url: string | Request, formData: Global.ISupportKey, init: RequestInit = {}): Promise<Response> {
     if (!init.headers) init.headers = <Headers>{};
     
     let body :string[] = [];
@@ -71,6 +72,6 @@ export function getCookies() {
 /** 
  * Set cookies.
  */
-export function setCookies(cookieObj: ISupportKey) {
+export function setCookies(cookieObj: Global.ISupportKey) {
     cookies = Object.assign({}, cookieObj);
 }

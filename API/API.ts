@@ -10,6 +10,7 @@ export namespace API {
         Tucao: "/subject/$id/comments?page=$page", 
     };  
 }
+ 
 export namespace Timeline {
     export enum Type {
         All,

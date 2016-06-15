@@ -1,22 +1,12 @@
-import {API, Subject} from './../API';
-import Tucao, {ITucao} from '../Tucao/Parser';
-import {loadCheerio} from '../../utils';
+import * as Global from '../../../global';
+import * as cheerio from 'cheerio';
+import Parser from '../Parser';
+import {API, Subject} from './../../API';
+import Tucao, {ITucao} from '../Tucao';
+import Information, {IInformation} from './InformationParser';
+import {ICharacter} from './CharacterParser';
 
-export type ICharacter = {
-    name: {
-        original: string;
-        Chinese: string;    
-    }, 
-    job: string;
-    avatar: string;
-    id: string;
-    cv: {
-        id: string;
-        name: string;
-    }[], 
-    discussionCount: string;
-}
-export type IInformation = {
+export type IDetail = {
     /**
      * 类型
      */
@@ -29,9 +19,7 @@ export type IInformation = {
     /**
      * 动画信息
      */
-    info: {
-        [key: string]: Subject.IInfoboxValue[]; 
-    }
+    info: IInformation;
     /**
      * 单集播放状态
      */
@@ -140,37 +128,13 @@ export type IInformation = {
  * Set ep status
  * @see http://bgm.tv/
  */
-export default class Parser {
 
-    static parse(html: string): IInformation {
-        let ret: IInformation = <IInformation>{};
-        let $ = loadCheerio(html);
-        ret.info = {};
-        $("#infobox li").each((index, element) => {
-            let $e = $(element);
-            let fieldName = $e.find(".tip");
-            let nameString = fieldName.text();
-            let nextAll = fieldName.nextAll();
-            let template = {
-                value: "", 
-                chinese: "", 
-                id: ""
-            };
-            if (nextAll.length > 0) {
-                ret.info[nameString] = <Subject.IInfoboxValue[]>[];
-                nextAll.each((index, element) => {
-                    let $e = $(element);
-                    let object = Object.assign({}, template);
-                    object.value = $e.text();
-                    object.chinese = $e.attr("title") || object.value;
-                    object.id = $e.attr("href").replace("/person/", "") || "";
-                    ret.info[nameString].push(object);
-                });
-            } else {
-                ret.info[nameString] = [Object.assign(template, {value: $e.contents().eq(1).text()})];
-            }
-        });
-        ret.tucao = Tucao.parse(html);
+export default class GlobalParser extends Parser {
+
+    public static parse($: cheerio.Static): IDetail {
+        let ret: IDetail = <IDetail>{};
+        ret.info = Information.parse($);
+        ret.tucao = Tucao.parse($);
         return ret;
        
     }
