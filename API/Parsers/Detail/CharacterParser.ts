@@ -4,6 +4,7 @@ import Parser from '../Parser';
 import {API, Subject} from '../../API';
 import {loadCheerio} from '../../../utils';
 
+
 export type ICharacter = {
     name: {
         original: string;
@@ -19,7 +20,7 @@ export type ICharacter = {
     discussionCount: string;
 }
 
-export default class CharacterParser extends Parser {
+export default class CharacterDetailParser extends Parser {
     
     static parse($: cheerio.Static) {
         let ret: ICharacter[] = [];

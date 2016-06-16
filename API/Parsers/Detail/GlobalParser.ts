@@ -4,7 +4,7 @@ import Parser from '../Parser';
 import {API, Subject} from './../../API';
 import Tucao, {ITucao} from '../Tucao';
 import Information, {IInformation} from './InformationParser';
-import {ICharacter} from './CharacterParser';
+import CharacterDetail, {ICharacter} from './CharacterDetailParser';
 
 export type IDetail = {
     /**
@@ -135,6 +135,7 @@ export default class GlobalParser extends Parser {
         let ret: IDetail = <IDetail>{};
         ret.info = Information.parse($);
         ret.tucao = Tucao.parse($);
+        ret.characters = CharacterDetail.parse($);
         return ret;
        
     }
