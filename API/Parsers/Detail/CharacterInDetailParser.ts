@@ -5,7 +5,7 @@ import {API, Subject} from '../../API';
 import {loadCheerio} from '../../../utils';
 import {ICharacter} from './CharacterParser';
 export type ICharacter = ICharacter;
-export default class CharacterDetailParser extends Parser {
+export default class CharacterInDetailParser extends Parser {
     
     static parse($: cheerio.Static) {
         let ret: ICharacter[] = [];

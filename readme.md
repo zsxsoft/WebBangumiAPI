@@ -51,14 +51,17 @@ Login.request("Username", "Password").then(c => {
   - [x] 正在观看列表 [``API/WatchingList``](example/watching.js)
   - [x] 时间线（返回HTML） [``API/Timeline``](example/timeline.js)
 - [ ] 单项信息
-  - [ ] 单项页面信息 [``API/Anime/Information``](example/anime-information.js) （部分完成）
+  - [ ] 页面信息 [``API/Anime/Information``](example/anime-information.js) （部分完成）
+    - [x] 角色信息
+    - [x] 制作人员
+    - [ ] 常去小组
+    - [ ] 正在观看
+    - [ ] 推荐目录
   - [ ] 角色信息
   - [ ] 制作人员
-  - [ ] 常去小组
-  - [ ] 正在观看
-  - [ ] 推荐目录
   - [x] 吐槽 [``API/Anime/Tucao``](example/tucao.js)
   - [ ] 讨论
+  - [ ] 评论
 - [ ] 列表
   - [ ] 排行榜
   - [ ] 每日放送
