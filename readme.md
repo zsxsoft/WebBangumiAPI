@@ -57,8 +57,8 @@ Login.request("Username", "Password").then(c => {
     - [ ] 常去小组
     - [ ] 正在观看
     - [ ] 推荐目录
-  - [ ] 角色信息
-  - [ ] 制作人员
+  - [x] 角色信息 [``API/Anime/Character``](example/anime-person_and_character.js)
+  - [x] 制作人员 [``API/Anime/Person``](example/anime-person_and_character.js)
   - [x] 吐槽 [``API/Anime/Tucao``](example/tucao.js)
   - [ ] 讨论
   - [ ] 评论

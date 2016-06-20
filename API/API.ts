@@ -8,6 +8,8 @@ export namespace API {
         Watched: "/subject/ep/$id/status/watched", 
         Information: "/subject/$id", 
         Tucao: "/subject/$id/comments?page=$page", 
+        Person: "/subject/$id/persons",
+        Character: "/subject/$id/characters"
     };  
     export const Person = "/person/$id";
 }
